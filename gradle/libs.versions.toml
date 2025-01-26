@@ -14,7 +14,6 @@ viewmodel="2.8.7"
 glide="4.15.1"
 retrofit="2.9.0"
 hilt = "2.48.1"
-hiltViewmodel = "1.2.0"
 legacySupportV4 = "1.0.0"
 fragmentKtx = "1.8.4"
 
@@ -37,10 +36,8 @@ livedata={group="androidx.lifecycle", name="lifecycle-livedata-ktx", version.ref
 glide={group="com.github.bumptech.glide", name="glide", version.ref="glide"}
 glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
 
-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-hilt-lifecycle-viewmodel = { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel", version.ref = "hiltViewmodel" }
-hilt-androidx-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltViewmodel" }
+daggerHilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+daggerHiltCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 
 
 
@@ -56,4 +53,4 @@ why-not-image-carousel = { group = "org.imaginativeworld.whynotimagecarousel", n
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }

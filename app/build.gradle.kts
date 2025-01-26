@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.dagger.hilt.android) apply false
+    id("kotlin-kapt")
 }
 
 android {
@@ -25,6 +27,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug {
+            buildConfigField ("String", "API_KEY", "\"b7b0daf3\"")
+            buildConfigField ("String", "BASE_URL", "\"https://www.omdbapi.com/\"")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -32,6 +38,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -51,10 +61,12 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.retrofit)
 
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
-    implementation(libs.hilt.androidx.compiler)
-    implementation(libs.hilt.lifecycle.viewmodel)
+
+    implementation(libs.daggerHilt)
+    annotationProcessor(libs.daggerHiltCompiler)
+    kapt(libs.daggerHiltCompiler)
+
+
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.circle.indicator)
