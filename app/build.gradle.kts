@@ -1,18 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.dagger.hilt.android) apply false
+    alias(libs.plugins.dagger.hilt.android)
     id("kotlin-kapt")
 }
 
 android {
     namespace = "com.gadwaer.ottdemo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.gadwaer.ottdemo"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -56,7 +56,7 @@ dependencies {
 
     implementation(libs.viewmodel)
     implementation(libs.glide)
-    implementation(libs.glide.compiler)
+    //implementation(libs.glide.compiler)
     implementation(libs.livedata)
     implementation(libs.gson)
     implementation(libs.retrofit)

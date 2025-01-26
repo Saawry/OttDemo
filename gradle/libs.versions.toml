@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.0"
+agp = "8.4.2"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -34,7 +34,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 viewmodel={group="androidx.lifecycle", name="lifecycle-viewmodel-ktx", version.ref="viewmodel"}
 livedata={group="androidx.lifecycle", name="lifecycle-livedata-ktx", version.ref="viewmodel"}
 glide={group="com.github.bumptech.glide", name="glide", version.ref="glide"}
-glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+#glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
 
 daggerHilt = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 daggerHiltCompiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
