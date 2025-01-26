@@ -42,6 +42,25 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+
+    implementation(libs.viewmodel)
+    implementation(libs.glide)
+    implementation(libs.glide.compiler)
+    implementation(libs.livedata)
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.compiler)
+    implementation(libs.hilt.androidx.compiler)
+    implementation(libs.hilt.lifecycle.viewmodel)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.circle.indicator)
+    implementation(libs.why.not.image.carousel)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
