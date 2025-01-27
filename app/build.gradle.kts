@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.circle.indicator)
     implementation(libs.why.not.image.carousel)
+    implementation(libs.androidx.paging)
 
 
     testImplementation(libs.junit)

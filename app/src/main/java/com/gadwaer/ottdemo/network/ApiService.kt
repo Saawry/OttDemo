@@ -18,4 +18,11 @@ interface ApiService {
         @Query("y") year: String?,
         @Query("type") type: String?
     ): MovieResponse
+
+    @GET("/")
+    suspend fun getMovies(
+        @Query("apikey") apiKey: String,
+        @Query("s") query: String,
+        @Query("page") type: Int?
+    ): MovieResponse
 }
