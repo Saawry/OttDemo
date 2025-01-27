@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.gadwaer.ottdemo.R
 import com.gadwaer.ottdemo.databinding.ActivityMainBinding
 import com.gadwaer.ottdemo.ui.adapters.ViewPagerAdapter
 import com.gadwaer.ottdemo.ui.homeui.HomeFragment
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setupViewPager()
 
     }
-    fun setupViewPager() {
+    private fun setupViewPager() {
         val adapter = ViewPagerAdapter(this)
         binding.viewPager.adapter = adapter
 
