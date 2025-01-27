@@ -21,7 +21,11 @@ circleIndicator = "2.1.6"
 imageCarousel = "2.1.0"
 paging = "3.1.1"
 parcelize = "1.9.0"
-exoplayer = "1.5.1"
+
+
+mockito = "5.0.0"
+coroutines-test = "1.7.3"
+mockwebserver = "4.11.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -55,6 +59,11 @@ why-not-image-carousel = { group = "org.imaginativeworld.whynotimagecarousel", n
 androidx-paging = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
 
 kotlin-parcelize = { group = "org.jetbrains.kotlin", name = "kotlin-parcelize-runtime", version = "parcelize" }
+
+
+mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines-test" }
+mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserver" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

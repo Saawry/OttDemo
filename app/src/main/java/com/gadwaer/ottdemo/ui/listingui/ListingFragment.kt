@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gadwaer.ottdemo.R
 import com.gadwaer.ottdemo.databinding.FragmentListingBinding
@@ -48,7 +49,7 @@ class ListingFragment : Fragment() {
             }
 
         })
-        binding.rvListing.layoutManager=LinearLayoutManager(requireContext())
+        binding.rvListing.layoutManager= GridLayoutManager(requireContext(), 2)
         binding.rvListing.adapter = adapter
 
 
