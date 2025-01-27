@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.android)
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -72,6 +73,9 @@ dependencies {
     implementation(libs.circle.indicator)
     implementation(libs.why.not.image.carousel)
     implementation(libs.androidx.paging)
+
+    implementation(libs.kotlin.parcelize)
+
 
 
     testImplementation(libs.junit)

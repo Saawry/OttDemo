@@ -1,16 +1,21 @@
 package com.gadwaer.ottdemo.ui.listingui
 
+import android.content.Intent
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gadwaer.ottdemo.R
 import com.gadwaer.ottdemo.databinding.FragmentListingBinding
+import com.gadwaer.ottdemo.model.Movie
+import com.gadwaer.ottdemo.ui.activity.DetailsActivity
 import com.gadwaer.ottdemo.ui.adapters.MoviePagingAdapter
+import com.gadwaer.ottdemo.utils.MovieItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 @AndroidEntryPoint
@@ -37,7 +42,12 @@ class ListingFragment : Fragment() {
     }
 
     private fun setUpMovieList() {
-        adapter = MoviePagingAdapter()
+        adapter = MoviePagingAdapter(object: MovieItemClickListener {
+            override fun onMovieClick(movie: Movie) {
+                onMovieClickListener(movie)
+            }
+
+        })
         binding.rvListing.layoutManager=LinearLayoutManager(requireContext())
         binding.rvListing.adapter = adapter
 
@@ -49,5 +59,12 @@ class ListingFragment : Fragment() {
                 }
         }
 
+    }
+    private fun onMovieClickListener(movie: Movie) {
+        // Handle movie click
+        val intent = Intent(requireContext(), DetailsActivity::class.java)
+        intent.putExtra("movie", movie)
+        startActivity(intent)
+        // Navigate to detail screen or perform any other action
     }
 }

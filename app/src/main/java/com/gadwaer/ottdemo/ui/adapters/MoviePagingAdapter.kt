@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gadwaer.ottdemo.databinding.ItemMovieBinding
 import com.gadwaer.ottdemo.model.Movie
+import com.gadwaer.ottdemo.utils.MovieItemClickListener
 
-class MoviePagingAdapter :
+class MoviePagingAdapter(private val onClick: MovieItemClickListener) :
     PagingDataAdapter<Movie, MoviePagingAdapter.MovieViewHolder>(MovieDiffCallback()) {
 
     inner class MovieViewHolder(private val binding: ItemMovieBinding) :
@@ -19,6 +20,9 @@ class MoviePagingAdapter :
             Glide.with(binding.root.context)
                 .load(movie.Poster)
                 .into(binding.ivPoster)
+            binding.root.setOnClickListener {
+                onClick.onMovieClick(movie)
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 package com.gadwaer.ottdemo.ui.homeui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gadwaer.ottdemo.databinding.FragmentHomeBinding
 import com.gadwaer.ottdemo.model.Movie
+import com.gadwaer.ottdemo.ui.activity.DetailsActivity
 import com.gadwaer.ottdemo.ui.adapters.MovieAdapter
 import com.gadwaer.ottdemo.utils.MovieItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
@@ -111,7 +113,7 @@ class HomeFragment : Fragment() {
             viewModel.batmanMovies.collectLatest { movies ->
                 batmanMovieAdapter = MovieAdapter(movies,object:MovieItemClickListener{
                     override fun onMovieClick(movie: Movie) {
-                        onMovieClick(movie)
+                        onMovieClickListener(movie)
                     }
 
                 })
@@ -133,7 +135,7 @@ class HomeFragment : Fragment() {
                 //Toast.makeText(requireContext(), movies.size, Toast.LENGTH_SHORT).show()
                 latestMovieAdapter = MovieAdapter(movies,object:MovieItemClickListener{
                     override fun onMovieClick(movie: Movie) {
-                        onMovieClick(movie)
+                        onMovieClickListener(movie)
                     }
 
                 })
@@ -144,10 +146,11 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun onMovieClick(movie: Movie) {
+    private fun onMovieClickListener(movie: Movie) {
         // Handle movie click
-        Toast.makeText(requireContext(), "Clicked: ${movie.Title}", Toast.LENGTH_SHORT).show()
-
+        val intent = Intent(requireContext(), DetailsActivity::class.java)
+        intent.putExtra("movie", movie)
+        startActivity(intent)
         // Navigate to detail screen or perform any other action
     }
 }

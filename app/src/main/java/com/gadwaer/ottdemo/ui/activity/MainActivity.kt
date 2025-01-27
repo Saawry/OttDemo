@@ -1,4 +1,4 @@
-package com.gadwaer.ottdemo.ui
+package com.gadwaer.ottdemo.ui.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
